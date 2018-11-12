@@ -3,6 +3,7 @@ package com.hdd.eureka_provider.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,7 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
  * @author bill.hao
  * @create 2018/11/12 下午 4:23
  */
+@FeignClient
 @RestController
+@RequestMapping("hello")
 public class TestController {
     @Autowired
     private DiscoveryClient client;
